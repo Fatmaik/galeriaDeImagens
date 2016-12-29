@@ -1,5 +1,4 @@
 window.onload = function() {
-
     imagens();
 }
 
@@ -14,22 +13,21 @@ function imagens() {
         "http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/Lamborghini-wallpaper-14.jpg",
         "http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/wallpaper-of-Lamborghini-2.jpg"
     ];
+    var img = document.getElementById("img"); // instancia para acessar e modificar documento de img do html
+    var next = document.getElementById("next"); // instancia para acessar botao next do html
+    var prev = document.getElementById("prev"); // instancia para acessar botao prev do hrml
+    var x = 0; // contador de posicao para acessar a lista de imagens
 
-    var img = document.getElementById("img");
-    var next = document.getElementById("next");
-    var prev = document.getElementById("prev");
-    var x = 0;
-    var y = images.length;
-
+    // funcao muda imagem ao clickar no botao next
     next.onclick = function() {
-        if (x < images.length - 1) {
-            x += 1;
-        } else {
-            x = 0;
+            if (x < images.length - 1) {
+                x += 1;
+            } else {
+                x = 0;
+            }
+            img.src = images[x];
         }
-        img.src = images[x];
-
-    }
+        // funcao contraria ao botao next
     prev.onclick = function() {
         if (x > 0) {
             x -= 1;
@@ -38,5 +36,4 @@ function imagens() {
         }
         img.src = images[x];
     }
-
 }
